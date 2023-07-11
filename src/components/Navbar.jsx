@@ -22,7 +22,7 @@ return(
     <img className='nav-logo' src="../images/home/logo.png" alt="logo"/>
     <ul className='nav-links'>
       <li><Link to="/">Home</Link></li>
-      <li><Link to="/gallery">Gallery</Link></li>
+      <li><Link to="/services">Services</Link></li>
       <li><Link to="/info">Info</Link></li>
      <li><Link to="/about">About</Link></li>
    

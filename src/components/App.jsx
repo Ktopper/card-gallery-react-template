@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
-import Gallery from './Gallery';
+import Services from './Services';
 import Info from './Info';
 import "../css/style.css"
 
@@ -16,7 +16,7 @@ import "../css/style.css"
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
-      <Route path="/gallery" element={<Gallery />} />
+      <Route path="/services" element={<Services />} />
       <Route path="/info" element={<Info />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>

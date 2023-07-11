@@ -17,8 +17,8 @@ function About(){
   <div className='container'>
     <div className='title-area'><h2>About</h2></div>
     <div className='card-content-area'>
-    {data.map(item => (
-      <Card key={item.id} item={item} />
+    {data.map((item, index) => (
+      <Card key={item.id} item={item} index={index} />
   ))}
     
     </div>

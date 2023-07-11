@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "title": "Gallery",
+    "title": "Services",
     "image": "../images/gallery/gallery_home.png",
     "alt": "gallery",
-    "target":"/gallery",
+    "target":"/services",
     "markdownPath": "",
-    "text": "Gallery of art done in projects"
+    "text": "Services offered"
   },
   {
     "id": 2,

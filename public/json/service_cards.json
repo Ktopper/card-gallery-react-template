@@ -4,6 +4,7 @@
       "title":"Title 1",
       "image": "./images/gallery/gallery_home.png",
       "alt": "javascript book",
+      "description": "description paragraph",
       "markdown": "../markdown/gallery/temp.md"
     },
     {
@@ -11,6 +12,7 @@
         "title":"Title 2",
         "image": "./images/gallery/gallery_home.png",
         "alt": "javascript book",
+        "description": "description paragraph",
         "markdown": "../markdown/gallery/temp.md"
       },
       {
@@ -18,6 +20,7 @@
         "title":"Title 3",
         "image":"./images/gallery/gallery_home.png",
         "alt": "javascript book",
+        "description": "description paragraph",
         "markdown": "../markdown/gallery/temp.md"
       },
       {
@@ -25,6 +28,7 @@
         "title":"Title 4",
         "image": "./images/gallery/gallery_home.png",
         "alt": "javascript book",
+        "description": "description paragraph",
         "markdown": "../markdown/gallery/temp.md"
       }
  
