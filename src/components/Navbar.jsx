@@ -1,34 +1,72 @@
-
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function Navbar(){
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
-  // The useEffect hook with empty dependencies array will run once after the initial render
+  // Update isMobile state when window size changes
   useEffect(() => {
-    // The setTimeout function will delay the opening of the navigation bar by 0.5 seconds
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 700);
+    };
+    
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 500); // 500ms delay
+    }, 500);
 
-    // Clear the timeout if the component is unmounted before the timeout finishes
     return () => clearTimeout(timer);
-  }, []); // Empty dependency array so the effect only runs once on mount
+  }, []);
 
-return(
-  <nav className={isOpen ? 'open' : ''}>
-    <h1 className='nav-title'>Title</h1>
-    <img className='nav-logo' src="../images/home/logo.png" alt="logo"/>
-    <ul className='nav-links'>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/services">Services</Link></li>
-      <li><Link to="/info">Info</Link></li>
-     <li><Link to="/about">About</Link></li>
-   
-    </ul>
-  </nav>
-);
+  const handleHamburgerClick = () => {
+    setIsHamburgerOpen(!isHamburgerOpen);
+  };
+
+  return (
+    <nav className={isOpen ? 'open' : ''}>
+      <h1 className='nav-title'>Title</h1>
+      <img className='nav-logo' src="../images/home/logo.png" alt="logo"/>
+      {
+        isMobile
+        ? (
+          <div className='hamburger' onClick={handleHamburgerClick}>
+            {/* A simple "hamburger" icon */}
+            <div></div>
+            <div></div>
+            <div></div>
+
+            {/* The dropdown menu */}
+            {isHamburgerOpen && (
+              <ul className='nav-links'>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/services">Services</Link></li>
+                <li><Link to="/info">Info</Link></li>
+                <li><Link to="/about">About</Link></li>
+              </ul>
+            )}
+          </div>
+        )
+        : (
+          <ul className='nav-links'>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/info">Info</Link></li>
+            <li><Link to="/about">About</Link></li>
+          </ul>
+        )
+      }
+    </nav>
+  );
 }
 
 export default Navbar;
